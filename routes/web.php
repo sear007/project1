@@ -1,5 +1,7 @@
 <?php
 
+use App\Events\Test;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    event(new Test("Message => Hello world"));
     return view('welcome');
 });
 
